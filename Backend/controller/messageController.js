@@ -1,12 +1,11 @@
 import { Message } from "../models/messageSchema.js";
+import {catchAsyncErrors} from "../middlewares/catchAsyncErrors.js";
+import ErrorHandler from "../middlewares/errorMiddleWare.js"
 
-export const sendMessage = async(req,res,next) => {
+export const sendMessage = catchAsyncErrors(async(req,res,next) => {
     const {firstName, lastName, email, phone, message} = req.body;
     if(!firstName || !lastName || !email || !phone || !message){
-        return res.status(400).json({
-            success: false,
-            message: "Please add all details!"
-        });
+        return next(new ErrorHandler("Please add all details!", 400));
     }
     await Message.create({firstName, lastName, email, phone, message});
     res.status(200).json({
@@ -14,4 +13,4 @@ export const sendMessage = async(req,res,next) => {
         message: "Message sent successfully "
     });
     
-};
+})
