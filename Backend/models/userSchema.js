@@ -21,8 +21,8 @@ const userSchema = new mongoose.Schema({
     phone:{
         type: String,
         required: true,
-        minLength: [11, "Phone number must contain exactly 11 digits"],
-        maxLength: [11, "Phone number must contain exactly 11 digits"], 
+        minLength: [10, "Phone number must contain exactly 10 digits"],
+        maxLength: [10, "Phone number must contain exactly 10 digits"], 
     },
     aadhar:{
         type: String,
@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema({
     doctorDepartment:{
         type: String,
     },
-    doctorProfile:{
+    docProfile:{
         public_id: String,
         url: String,
     },
