@@ -7,9 +7,7 @@ const Hero = ({ title, imageUrl }) => {
         <h1>{title}</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora,
-          iure aliquam. Enim debitis dolorum architecto voluptas ut aliquam
-          deleniti dolore voluptatem, perspiciatis vero quas. Quod ducimus
-          consequatur quibusdam vitae placeat.
+          iure aliquam. 
         </p>
       </div>
       <div className="banner">
