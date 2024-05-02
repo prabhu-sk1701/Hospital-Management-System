@@ -89,7 +89,7 @@ const AddNewAdmin = () => {
           <div>
             <input
               type="number"
-              placeholder="AADHAR"
+              placeholder="aadhar"
               value={aadhar}
               onChange={(e) => setAadhar(e.target.value)}
             />
